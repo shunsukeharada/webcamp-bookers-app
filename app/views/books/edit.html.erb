@@ -1,3 +1,4 @@
+<body>
 <h1>Editing Back</h1>
 <%= form_with model:@book, url:"/books/#{@book.id}", local:true do |f| %>
   <h4>Title</h4>
@@ -6,5 +7,8 @@
   <%= f.text_area :body %>
   <%= f.submit 'Update Book' %>
 <% end %>
-<%= link_to "Edit", "/books/#{@book.id}/edit" %>
+</body>
+
+<%= link_to "Show", "/books/#{@book.id}" %>
+|
 <%= link_to "Back", "/books" %>
