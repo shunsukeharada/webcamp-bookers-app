@@ -16,12 +16,11 @@ class BooksController < ApplicationController
   end
   
   def create
-   book = Book.new(book_params)
-      if book.save
+   @book = Book.new(book_params)
+      if @book.save
         redirect_to '/books', notice: 'Book was successfully created.' 
       else
-        redirect_to '/books' 
-
+        render :new
       end
   end
   
